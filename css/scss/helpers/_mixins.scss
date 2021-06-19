@@ -1,0 +1,61 @@
+@mixin maxMedium {
+    @media(max-width:992px) {
+        @content;
+        
+    }
+    
+}
+@mixin card {   //@mixin transforme 3D cards
+    .card{
+        height: 300px;
+        width: 400px;
+        inset: 0;
+        background-color: rgb(57, 196, 238);
+        transform-style: preserve-3d;
+        transition:all .5s ease-in-out;
+        text-overflow: ellipsis;
+        z-index: 1;
+        text-align: center;
+        &:hover{
+         transform:$rotate;
+        }
+        .front{
+         z-index: 2;
+         backface-visibility: $visiblty;
+     }
+     .back{
+         z-index: 1;
+         transform:$rotate;
+         backface-visibility: $visiblty;
+     
+     }}
+    
+}
+@mixin overlay{  //@mixin overlay 
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+@mixin prefixer($proprty,$value,$prefixes:() ) {   // @mixin prefixes(-webkit- ,-moz- ,-ms- ,-o-)
+
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $proprty}:$value;
+        
+    }
+    #{$proprty}:$value;
+}
+
+@mixin keyFrame($animation-name) {  //@mixin  Prefixes Animations and Content
+    @-webkit-keyframes#{$animation-name}{
+        @content;
+    }
+    @-moz-keyframes#{$animation-name}{
+        @content;
+    }
+   @keyframes#{$animation-name}{
+        @content;
+    }
+   
+    
+}

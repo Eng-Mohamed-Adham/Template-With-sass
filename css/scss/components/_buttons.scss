@@ -1,0 +1,40 @@
+.main-button{
+    background-color: rgba($mainColor, .8);
+    color: #FFF;
+    border:none;
+    padding: 10px 15px;
+    text-align: center;
+    min-width:120px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        background-color: $mainColor;
+    }
+}
+.toggler{
+    background-color:$mainColor;
+    border-radius: 50%;
+    width: 50px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    display: none;
+    @media #{$maxMobile}{
+        display: block;
+    }
+    span{
+        display: block;
+        width: 40px;
+        height: 4px;
+        border-radius:5px;
+        background-color: #fff;
+        &:not(:last-child){
+            margin-bottom:3px;
+        }
+    }
+}

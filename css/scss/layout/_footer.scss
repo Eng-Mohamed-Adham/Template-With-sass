@@ -1,0 +1,108 @@
+/*Start Footer*/
+.footer{
+    background-color:$secondColor;
+    padding-top: 30px;
+    margin-top: 50px;
+    
+   
+   .grid{
+       
+       @media #{$maxMobile}{
+        display:block;
+    }
+    @media #{$minSmall}{
+        display: grid;
+       grid-template-columns: repeat(10, 1fr);
+       grid-row: 1fr;
+       gap: 20px;
+    }
+
+
+    
+    .gallery{
+        
+        grid-column: span 4;
+        .img-box{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px 18px;
+            img{
+                grid-column: span 1;
+                width:150px;
+                height: 150px;
+            }
+            .text{
+                grid-column: span 2;
+                h4{
+                    color:$mainColor;
+                    margin: 10px 0;
+
+                }
+                p{
+                    color: rgb(70, 69, 69);
+                    line-height: 1.5;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .info{
+        grid-column:span 3;
+        margin-right: 50px;
+        margin-left: 50px;
+        ul{
+            color:#666;
+            span{
+                color: $mainColor;
+            }
+            li{
+                line-height: 1.6;
+            }
+        }
+        h4{
+            color:#444;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+        p{
+            color:#555;
+            margin-top: 5px;
+        }
+    }
+    .contact{
+        grid-column: span 3;
+       form{
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            border: 1px solid #c9c9c9;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            width: 100%;
+        }
+        textarea{
+            height: 140px;
+        }
+       }
+    }
+    .section-title{
+        color: #444;
+        font-weight: normal;
+    }
+   }
+   .copyright {
+       border-top: 1px solid #b4b4b4;
+       color: #666;
+       display: flex;
+       justify-content: space-around;
+       padding:25px 0 ;
+       .author{
+           text-align: $text-right;
+       }
+       
+   }
+}
+
+
+/*End Footer*/

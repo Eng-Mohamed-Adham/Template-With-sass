@@ -1,0 +1,23 @@
+.head-border{
+    position: relative;
+    h2{
+        background-color: $mainColor;
+    color:#FFF;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 400px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 1.5px;
+        background-color: #CCC;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: -1;
+    }
+    }
+}
